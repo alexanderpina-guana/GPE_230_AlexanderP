@@ -16,7 +16,7 @@ void AItem::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	UE_LOG(LogTemp, Warning, TEXT("Begin play from C++"))
+	UE_LOG(LogTemp, Warning, TEXT("Begin play from C++"));
 
 		if (GEngine)
 		{
@@ -28,6 +28,8 @@ void AItem::BeginPlay()
 void AItem::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	UE_LOG(LogTemp, Warning, TEXT("DeltaTime: %f"), DeltaTime);
 
 }
 
