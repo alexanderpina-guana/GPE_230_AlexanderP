@@ -20,7 +20,7 @@ void AItem::BeginPlay()
 
 		if (GEngine)
 		{
-			GEngine->AddOnScreenDebugMessage(10, 60.f, FColor::Emerald, FString("Onscreen Message from C++"));
+			GEngine->AddOnScreenDebugMessage(1, 60.f, FColor::Emerald, FString("Onscreen Message from C++"));
 	    }
 }
 
