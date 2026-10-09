@@ -2,6 +2,7 @@
 
 
 #include "Item.h"
+#include "DrawDebugHelpers.h"
 
 // Sets default values
 AItem::AItem()
@@ -22,6 +23,15 @@ void AItem::BeginPlay()
 		{
 			GEngine->AddOnScreenDebugMessage(1, 60.f, FColor::Emerald, FString("Onscreen Message from C++"));
 	    }
+
+	UWorld* World = GetWorld();
+
+	if (World)
+	{
+		FVector Location = GetActorLocation();
+		DrawDebugSphere(World, Location, 25.f, 25, FColor::Green, false, 60.f);
+	}
+
 }
 
 // Called every frame
