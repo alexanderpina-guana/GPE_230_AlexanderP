@@ -4,6 +4,10 @@
 #include "Item.h"
 #include "DrawDebugHelpers.h"
 
+#define SIXTY 60
+
+#define DRAW_SPHERE(Location)
+
 // Sets default values
 AItem::AItem()
 {
