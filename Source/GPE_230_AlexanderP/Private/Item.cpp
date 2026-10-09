@@ -31,5 +31,12 @@ void AItem::Tick(float DeltaTime)
 
 	UE_LOG(LogTemp, Warning, TEXT("DeltaTime: %f"), DeltaTime);
 
+	if (GEngine)
+	{
+		FString message = FString::Printf(TEXT("DeltaTime: %f"), DeltaTime);
+
+		GEngine->AddOnScreenDebugMessage(1, 60.f, FColor::Emerald, message);
+	}
+
 }
 
