@@ -33,9 +33,13 @@ void AItem::Tick(float DeltaTime)
 
 	if (GEngine)
 	{
+		FString name = GetName();
+
 		FString message = FString::Printf(TEXT("DeltaTime: %f"), DeltaTime);
 
-		GEngine->AddOnScreenDebugMessage(1, 60.f, FColor::Emerald, message);
+		FString itemNameMessage = FString::Printf(TEXT("Item Name: %s"), name);
+
+		GEngine->AddOnScreenDebugMessage(1, 60.f, FColor::Emerald, itemNameMessage);
 	}
 
 }
