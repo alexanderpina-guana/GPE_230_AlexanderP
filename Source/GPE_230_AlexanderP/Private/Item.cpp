@@ -3,10 +3,7 @@
 
 #include "Item.h"
 #include "DrawDebugHelpers.h"
-
-#define SIXTY 60
-
-#define DRAW_SPHERE(Location) if (GetWorld()) DrawDebugSphere(GetWorld(), Location, SIXTY, 24, FColor::Red, true);
+#include "GPE_230_AlexanderP/GPE_230_AlexanderP.h"
 
 // Sets default values
 AItem::AItem()
