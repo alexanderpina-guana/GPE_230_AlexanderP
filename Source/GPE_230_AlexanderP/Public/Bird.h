@@ -4,13 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
-#include "Components/CapsuleComponent.h"
 #include "Bird.generated.h"
 
 UCLASS()
 class GPE_230_ALEXANDERP_API ABird : public APawn
 {
-	
+	GENERATED_BODY()
 
 public:
 	// Sets default values for this pawn's properties
@@ -26,7 +25,7 @@ protected:
 	virtual void BeginPlay() override;
 private:
 	UPROPERTY(VisibleAnywhere)
-	UCapsuleComponent* Capsule;
+	class UCapsuleComponent* Capsule;
 
 
 };

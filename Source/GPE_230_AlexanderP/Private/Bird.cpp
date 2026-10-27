@@ -2,7 +2,7 @@
 
 
 #include "Bird.h"
-#include "Pawns/Bird.h"
+#include "Components/CapsuleComponent.h"
 
 // Sets default values
 ABird::ABird()
