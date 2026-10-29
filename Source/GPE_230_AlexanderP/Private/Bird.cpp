@@ -44,3 +44,8 @@ void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
+void ABird::MoveForward(float value)
+{
+
+}
+
