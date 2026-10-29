@@ -12,7 +12,7 @@ class USkeletalMeshComponent;
 UCLASS()
 class GPE_230_ALEXANDERP_API ABird : public APawn
 {
-	
+	GENERATED_BODY()
 
 public:
 	// Sets default values for this pawn's properties
