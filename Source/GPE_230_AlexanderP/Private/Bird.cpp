@@ -40,12 +40,20 @@ void ABird::Tick(float DeltaTime)
 void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 
-	
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	PlayerInputComponent->BindAxis(FName("MoveForward"), this, &ABird::MoveForward);
 
 }
 
 void ABird::MoveForward(float value)
 {
+	if (Controller && (value != 0.f))
+	{
+		FVector Forward = GetActorForwardVector();
+		AddMovementInput(Forward, value);
 
+	}
+	UE_LOG(LogTemp, Warning, TEXT("value: %f"), value);
 }
 
