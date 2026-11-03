@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Pawn.h"
+#include "InputActionvalue.h"
 #include "Bird.generated.h"
 
 class UCapsuleComponent;
@@ -13,7 +14,7 @@ class UInputMappingContext;
 UCLASS()
 class GPE_230_ALEXANDERP_API ABird : public APawn
 {
-	GENERATED_BODY()
+
 
 public:
 	// Sets default values for this pawn's properties
@@ -31,6 +32,11 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
 	UInputMappingContext* BirdMappingContext;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input)
+	UInputAction* MoveAction;
+
+	void Move(const FInputActionValue& value);
+
 private:
 	UPROPERTY(VisibleAnywhere)
 	UCapsuleComponent* Capsule;

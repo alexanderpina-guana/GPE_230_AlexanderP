@@ -4,7 +4,9 @@
 #include "Bird.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Components/InputComponent.h"
 #include "EnhancedInputSubsystems.h"
+#include "EnhancedInputComponent.h"
 
 // Sets default values
 ABird::ABird()
@@ -33,7 +35,7 @@ void ABird::BeginPlay()
 	{
 		if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(PlayerController->GetLocalPlayer()))
 		{
-
+			Subsystem->AddMappingContext(BirdMappingContext, 0);
 		}
 	}
 	
@@ -50,9 +52,14 @@ void ABird::Tick(float DeltaTime)
 void ABird::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
+	Super:SetupPlayerInputComponent(PlayerInputComponent);
 
 	PlayerInputComponent->BindAxis(FName("MoveForward"), this, &ABird::MoveForward);
+
+	if (UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent))
+	{
+
+	}
 
 }
 
@@ -65,5 +72,14 @@ void ABird::MoveForward(float value)
 
 	}
 	UE_LOG(LogTemp, Warning, TEXT("value: %f"), value);
+}
+
+void ABird::Move(const FInputActionValue& value)
+{
+	const bool CurrentValue = value.Get<bool>();
+	if (CurrentValue)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("IA_Move Triggered"));
+	}
 }
 
